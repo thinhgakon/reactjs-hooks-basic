@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./App.scss";
 import ColorBox from "./components/ColorBox";
 import TodoList from "./components/TodoList";
+import TodoForm from "./components/TodoForm";
 
 function App() {
   const initTodoList = [
@@ -21,10 +22,21 @@ function App() {
     setTodoList(newTodoList);
   }
 
+  function handleOnSubmit(formValues) {
+    const newTodo = {
+      id: todoList.length + 1,
+      ...formValues,
+    };
+    const newTodoList = [...todoList];
+    newTodoList.push(newTodo);
+    setTodoList(newTodoList);
+  }
+
   return (
     <div className="app">
       <h1>React Hooks - TodoList</h1>
       <ColorBox />
+      <TodoForm onSubmit={handleOnSubmit} />
       <TodoList todos={todoList} onTodoClick={handleTodoClick} />
     </div>
   );
