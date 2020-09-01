@@ -9,6 +9,7 @@ import TodoForm from "./components/TodoForm";
 import PostList from "./components/PostList";
 import Pagination from "./components/Pagination";
 import PostFiltersForm from "./components/PostFiltersForm";
+import Clock from "./components/Clock";
 
 function App() {
   const initTodoList = [
@@ -80,13 +81,14 @@ function App() {
 
   return (
     <div className="app">
-      <h1>React Hooks - Post List</h1>
+      <h1>React Hooks - Digital Clock</h1>
+      <Clock />
       {/* <ColorBox /> */}
       {/* <TodoForm onSubmit={handleOnSubmit} /> */}
       {/* <TodoList todos={todoList} onTodoClick={handleTodoClick} /> */}
-      <PostFiltersForm onSubmit={handleSearchPostList} />
+      {/* <PostFiltersForm onSubmit={handleSearchPostList} />
       <PostList posts={postList} />
-      <Pagination pagination={pagination} onPageChange={handlePageChange} />
+      <Pagination pagination={pagination} onPageChange={handlePageChange} /> */}
     </div>
   );
 }
